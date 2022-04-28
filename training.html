@@ -11,11 +11,12 @@
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
 		<link href="./css/style.css" rel="stylesheet">
+		<link href="./css/linePlot.css" rel="stylesheet">
 	</head>
 	<body>
 		<!-- Top Navbar -->
 		<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-			<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
+			<a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Data Visualization</a>
 			<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -131,13 +132,29 @@
 					</ul>
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-							<h2>Line Graph Showing Training Progress</h2>
+							<h2>Line Graph Showing Training Progress By Epoch</h2>
 							<div class="table-responsive">
-								<div id="force_directed_graph" class="container"></div>
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text">Select Learning Rate</span>
+									</div>
+									<select id="learning_rates_line" class="form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+									<div class="input-group-prepend">
+										<span class="input-group-text">Max Epoch</span>
+									</div>
+									<input class="form-control" type="number" value="10" id="max_epoch_line" name="quantity" min="3" max="700">
+								</div>
+								<div id="line_chart" class="container"></div>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<h2>Various Box Plot With Animation</h2>
+							<h2>Various Box Plot  By Epoch With Animation</h2>
 							<div class="table-responsive">
 								<div id="arc_diagram" class="container"></div>
 							</div>
@@ -152,10 +169,8 @@
 		<!-- Fallback -->
 		<script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"><\/script>')</script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
-		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
+		<script src="https://d3js.org/d3.v3.min.js"></script>
 		<!-- Only this file import will work -->
-		<script type="module" src="./js/script.js"></script>
+		<script type="module" src="./js/lineChart.js"></script>
 	</body>
 </html>
