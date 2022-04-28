@@ -121,33 +121,27 @@
 						</div>
 					</div>
 
-					<h2>Text Embedding</h2>
-					<h5>Scatterplot On TSNE and PCA</h5>
-					<div class="table-responsive">
-
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text">Select Your File</span>
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Line Graph</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Box Plot</a>
+						</li>
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							<h2>Line Graph Showing Training Progress</h2>
+							<div class="table-responsive">
+								<div id="force_directed_graph" class="container"></div>
 							</div>
-							<select class="form-control" id="file_list">
-								<option value="./data/scatterPlot/pca_tuned_2.csv">pca_tuned_2.csv</option>
-								<option value="./data/scatterPlot/pca_tuned_4.csv">pca_tuned_4.csv</option>
-								<option value="./data/scatterPlot/pca_tuned_5.csv">pca_tuned_5.csv</option>
-								<option value="./data/scatterPlot/pca_untuned_2.csv">pca_untuned_2.csv</option>
-								<option value="./data/scatterPlot/pca_untuned_4.csv">pca_untuned_4.csv</option>
-								<option value="./data/scatterPlot/pca_untuned_5.csv">pca_untuned_5.csv</option>
-								<option value="./data/scatterPlot/tsne_tuned_2.csv">tsne_tuned_2.csv</option>
-								<option value="./data/scatterPlot/tsne_tuned_4.csv">tsne_tuned_4.csv</option>
-								<option value="./data/scatterPlot/tsne_tuned_5.csv">tsne_tuned_5.csv</option>
-								<option value="./data/scatterPlot/tsne_untuned_2.csv">tsne_untuned_2.csv</option>
-								<option value="./data/scatterPlot/tsne_untuned_4.csv">tsne_untuned_4.csv</option>
-								<option value="./data/scatterPlot/tsne_untuned_5.csv">tsne_untuned_5.csv</option>
-							</select>
 						</div>
-					</div>
-
-					<div class="table-responsive">
-						<div id="scatterplot_matrix"></div>
+						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+							<h2>Various Box Plot With Animation</h2>
+							<div class="table-responsive">
+								<div id="arc_diagram" class="container"></div>
+							</div>
+						</div>
 					</div>
 					
 				</main>
