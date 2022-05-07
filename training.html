@@ -7,11 +7,11 @@
 		<meta name="description" content="">
 		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 		<meta name="generator" content="Hugo 0.88.1">
-		<title>Dashboard Template · Bootstrap v4.6</title>
-
+		<title>Data Visualization</title>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
 		<link href="./css/style.css" rel="stylesheet">
 		<link href="./css/linePlot.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="./css/distrochart/distrochart.css">
 	</head>
 	<body>
 		<!-- Top Navbar -->
@@ -154,9 +154,59 @@
 							</div>
 						</div>
 						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-							<h2>Various Box Plot  By Epoch With Animation</h2>
+							<h2>Various Box Plot  By Epoch With Animation <a href="./boxplot_backup">(full screen version)</a></h2>
 							<div class="table-responsive">
-								<div id="arc_diagram" class="container"></div>
+								<div class="chart-controller container">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">Select Epoch From Seekbar</span>
+											<span class="input-group-text" id="chart_epoc_select_data">Year Select</span>
+										</div>
+								
+										<input id="chart_epoc_select" class="form-control" type="range" name="chart_epoc_select" min="0" max="500"/>
+									</div>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">Select Learning Rate</span>
+											<select id="chart_learning_rates" class="form-control">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
+										</div>
+										<div class="input-group-prepend">
+											<span class="input-group-text">Select Showing Option</span>
+											<select id="showing_options" class="form-control">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<input type="checkbox" class="form-check-input" id="mergeAllEpoch"/>
+										<label class="form-check-label" for="mergeAllEpoch">Merge All Epoch Data</label>
+									</div>
+								</div>
+								
+								<div class="chart-wrapper" id="distro_chart"></div>
+								
+								<div class="chart-options">
+									<p>Show: </p>
+									<button id="box_plot" type="button" class="btn btn-primary">Box Plot</button>
+									<button id="notched_box_plot" type="button" class="btn btn-primary">Notched Box Plot</button>
+									<button id="violin_plot_unbound" type="button" class="btn btn-primary">Violin Plot Unbound</button>
+									<button id="violin_plot_clamp_to_data" type="button" class="btn btn-primary">Violin Plot Clamp to Data</button>
+									<button id="bean_plot" type="button" class="btn btn-primary">Bean Plot</button>
+									<button id="beeswarm_plot" type="button" class="btn btn-primary">Beeswarm Plot</button>
+									<button id="scatter_plot" type="button" class="btn btn-primary">Scatter Plot</button>
+									<button id="trend_lines" type="button" class="btn btn-primary">Trend Lines</button>
+									<button id="play_animation" type="button" class="btn btn-warning">Play/Pause Animation</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -170,7 +220,9 @@
 		<script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"><\/script>')</script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
 		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script src="./js/distrochart/distrochart.js" charset="utf-8"></script>
 		<!-- Only this file import will work -->
 		<script type="module" src="./js/lineChart.js"></script>
+		<script type="text/javascript" charset="utf-8" src="./js/boxPlot.js"></script>
 	</body>
 </html>
